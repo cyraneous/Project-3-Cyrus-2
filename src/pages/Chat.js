@@ -11,6 +11,7 @@ import { TextContainer } from '../components/TextContainer/TextContainer'
 import './Chat.css';
 
 let socket;
+let ENDPOINT;
 
 export const Chat = ({ location }) => {
   const [name, setName] = useState('');
@@ -37,7 +38,7 @@ export const Chat = ({ location }) => {
   useEffect(() => {
     socket.on('message', message => {
       setMessages(msgs => [...msgs, message]);
-    });
+    }, [ENDPOINT]);
 
     socket.on("roomData", ({ users }) => {
       setUsers(users);

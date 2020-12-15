@@ -1,8 +1,8 @@
 import React from 'react';
 
-// import ScrollToBottom from 'react-scroll-to-bottom'
+import ScrollToBottom from 'scroll-to-bottomjs'
 
-import { Message } from './Message/Message'
+import Message from '../Message/Message'
 
 import './Messages.css';
 

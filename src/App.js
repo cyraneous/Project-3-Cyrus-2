@@ -1,15 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import InfoBar from "./components/InfoBar/InfoBar";
+import NavTabs from "./components/InfoBar/NavTabs";
 import Home from "./pages/Home";
-// import Login from "./components/pages/Login";
+import Login from "./pages/Login";
 import Chat from "./pages/Chat";
 import Reserve from "./pages/Reserve";
-// import Message from "./components/Messages/Message";
-// import Messages from "./components/Messages";
+// import Message from "./components/Message/Message";
+// import Messages from "./components/Messages/Messages";
 // import TextContainer from "./components/TextContainer";
-
-
 
 
 
@@ -23,7 +21,6 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
         <Route path="/reserve" component={Reserve} />
-        <Route path='/' exact component={Join} />
         <Route path='/chat' component={Chat} />
       </div>
     </Router>
