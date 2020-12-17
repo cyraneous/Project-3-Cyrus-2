@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from "react";
 import queryString from 'query-string';
 import io from "socket.io-client";
-
-
 import { InfoBar } from '../components/InfoBar/InfoBar';
 import { Input } from '../components/Input/Input';
 import { Messages } from '../components/Messages/Messages';
 import { TextContainer } from '../components/TextContainer/TextContainer'
-
 import './Chat.css';
 
+const socket = io.connect('http://localhost:4000')
+
 let socket;
-let ENDPOINT;
 
 export const Chat = ({ location }) => {
   const [name, setName] = useState('');
@@ -56,6 +54,7 @@ export const Chat = ({ location }) => {
 
   return (
     <div className="outerContainer">
+      <h1>Test</h1>
       <TextContainer users={users} />
       <div className="container">
         <InfoBar room={room} />
