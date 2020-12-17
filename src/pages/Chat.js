@@ -9,7 +9,8 @@ import './Chat.css';
 
 const socket = io.connect('http://localhost:4000')
 
-let socket;
+// let socket;
+// let ENDPOINT;
 
 export const Chat = ({ location }) => {
   const [name, setName] = useState('');
@@ -17,21 +18,22 @@ export const Chat = ({ location }) => {
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
+  const ENDPOINT =
 
-  useEffect(() => {
-    const { name, room } = queryString.parse(location.search);
+    useEffect(() => {
+      const { name, room } = queryString.parse(location.search);
 
-    socket = io(ENDPOINT);
+      socket = io(ENDPOINT);
 
-    setRoom(room);
-    setName(name)
+      setRoom(room);
+      setName(name)
 
-    socket.emit('join', { name, room }, (error) => {
-      if (error) {
-        alert(error);
-      }
-    });
-  }, [ENDPOINT, location.search]);
+      socket.emit('join', { name, room }, (error) => {
+        if (error) {
+          alert(error);
+        }
+      });
+    }, [ENDPOINT, location.search]);
 
   useEffect(() => {
     socket.on('message', message => {
