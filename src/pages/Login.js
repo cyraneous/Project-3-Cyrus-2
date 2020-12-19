@@ -1,18 +1,13 @@
-import React from "react";
+import React from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+
 
 function Login() {
-  return (
-   <div>
-    <h1>Virtual Study Buddy Homepage/Login</h1>
-      
-    <p>
-     <br></br>
-     Email (text)<br></br>
-     Password (text)<br></br>
-     Login (Button)<br></br>
-     Register (Button)<br></br>
-     </p>
-     </div>
+  const{ loginWithRedirect, isAuthenticated } = useAuth0();
+
+  return !isAuthenticated && ( 
+    
+    <button onClick={loginWithRedirect}>Log in</button>
   );
 }
 

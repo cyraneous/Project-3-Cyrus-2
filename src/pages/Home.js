@@ -6,13 +6,7 @@ function Home() {
     <div>
       <h1>Virtual Study Buddy Homepage</h1>
       
-       <p>
-        <br></br>
-        Email (text)<br></br>
-        Password (text)<br></br>
-        Login (Button)<br></br>
-        Register (Button)<br></br>
-        </p>
+       
     </div>
   );
 }
